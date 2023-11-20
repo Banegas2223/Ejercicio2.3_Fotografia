@@ -11,18 +11,18 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.ejercicio23_fotografia.configuracion.ListAdapter;
-import com.example.ejercicio23_fotografia.configuracion.Photograh;
+import com.example.ejercicio23_fotografia.configuracion.AdaptadorLista;
+import com.example.ejercicio23_fotografia.configuracion.Foto;
 import com.example.ejercicio23_fotografia.configuracion.SQLiteConexion;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListActivity extends AppCompatActivity {
+public class ActividadLista extends AppCompatActivity {
 
     ListView listView;
-    List<Photograh> mData = new ArrayList<>();
-    ListAdapter mAdapter;
+    List<Foto> mData = new ArrayList<>();
+    AdaptadorLista mAdapter;
     SQLiteConexion conexion;
 
     Button btnregresar;
@@ -36,7 +36,7 @@ public class ListActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.listView);
         obtenerTabla();
-        mAdapter = new ListAdapter(ListActivity.this,mData);
+        mAdapter = new AdaptadorLista(ActividadLista.this,mData);
         listView.setAdapter(mAdapter);
         btnregresar = (Button) findViewById(R.id.btnListaFotografias);
 
@@ -59,7 +59,7 @@ public class ListActivity extends AppCompatActivity {
 
         //Recorremos el cursor
         while (cursor.moveToNext()) {
-            Photograh photograh = new Photograh();
+            Foto photograh = new Foto();
             photograh.setId(cursor.getString(0));
             photograh.setDescription(cursor.getString(2));
             mData.add(photograh);

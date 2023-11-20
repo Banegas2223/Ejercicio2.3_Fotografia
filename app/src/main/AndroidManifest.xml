@@ -42,7 +42,7 @@
         android:theme="@style/Theme.Ejercicio23_Fotografia"
         tools:targetApi="34">
         <activity
-            android:name=".ListActivity"
+            android:name=".ActividadLista"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

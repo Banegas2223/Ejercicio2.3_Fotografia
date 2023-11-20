@@ -1,18 +1,18 @@
 package com.example.ejercicio23_fotografia.configuracion;
 
-public class Photograh {
+public class Foto {
     //Variables
     private String id = "Id";
     private String photo = "photo";
     private String description = "description";
 
-    public Photograh(String id, String photo, String description) {
+    public Foto(String id, String photo, String description) {
         this.id = id;
         this.photo = photo;
         this.description = description;
     }
 
-    public Photograh() {
+    public Foto() {
     }
 
     public String getId() {

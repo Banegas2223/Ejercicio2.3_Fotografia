@@ -21,9 +21,9 @@ import com.example.ejercicio23_fotografia.R;
 
 import java.util.List;
 
-public class ListAdapter extends ArrayAdapter<Photograh> implements View.OnClickListener {
+public class AdaptadorLista extends ArrayAdapter<Foto> implements View.OnClickListener {
 
-    private List<Photograh> mData;
+    private List<Foto> mData;
     private Context context;
 
     SQLiteConexion conexion;
@@ -32,7 +32,7 @@ public class ListAdapter extends ArrayAdapter<Photograh> implements View.OnClick
         TextView txtDescription;
     }
 
-    public ListAdapter(@NonNull Context context, List<Photograh> mData) {
+    public AdaptadorLista(@NonNull Context context, List<Foto> mData) {
         super(context, R.layout.item_list, mData);
         this.mData = mData;
         this.context = context;
@@ -46,7 +46,7 @@ public class ListAdapter extends ArrayAdapter<Photograh> implements View.OnClick
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Photograh photograh = mData.get(position);
+        Foto photograh = mData.get(position);
             ViewHolder viewHolder;
             View view = convertView;
 
